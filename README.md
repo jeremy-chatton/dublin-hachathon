@@ -1,12 +1,22 @@
 # Dublin hackathon
 
-During this hackathon, we have worked on the implementation of a google cloud function which will call Gemini AI to generate Logistic objet by interprating the business needs.
+During this hackathon, we have worked on several topics : 
+- implementation of a google cloud function which will call Gemini AI to generate Logistic objet by interprating the business needs.
+- implementation of bruno collection to record the several objects saved into One Record server
+- Manual to install One Record Server on GCP
 
-## Install google cloud function
+# Installation of GCP function to translate text into LO
+
+#create a gcp project
+https://console.cloud.google.com/projectcreate
+
+#activate AI google service and create a api key 
+https://aistudio.google.com/apikey
+
+#create a function using java 17
 
 
-
-### Setup the GCP function to translate text into LO
+#
 
 
 
@@ -56,6 +66,11 @@ https://console.cloud.google.com/run/create
 
 #select Artifact Registry
 gcr.io/iata-hackathon-dublin/docker-compose-ne-one-play:latest
+
+# Bruno collections
+
+- "bruno collections\dublin\Hackathon-dublin" : Forwarder and Carrier request to create LO
+- "bruno collections\dublin\Hackathon-dublin" : contains the request to reach the cloud function to translate text into object and gemini request
 
 The configuration is done, it should works ! 
 ## Contributing
