@@ -1,0 +1,68 @@
+meta {
+  name: Create Booking Option Request
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrlForwarder}}/logistics-objects
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "@context": {
+          "cargo": "https://onerecord.iata.org/ns/cargo#",
+          "api": "https://onerecord.iata.org/ns/api#",
+          "ccodes": "https://onerecord.iata.org/ns/coreCodeLists#"
+      },
+      "@type": "cargo:BookingOptionRequest",
+      "cargo:bookingShipmentDetails": {
+          "@type": "cargo:BookingShipment",
+          "cargo:expectedCommodity": {
+              "@type": "ccodes:CommodityCode",
+              "cargo:code": "CONSO"
+          },
+          "cargo:expectedHScode": null,
+          "cargo:pieceGroups": [
+              {
+                  "@type": "cargo:LoosePiece",
+                  "cargo:uldContourCode": {
+                      "@type": "cargo:CodeListElement",
+                      "cargo:code": "Q7",
+                      "cargo:codeDescription": null
+                  },
+                  "cargo:uldType": {
+                      "@type": "cargo:CodeListElement",
+                      "cargo:code": "AMD",
+                      "cargo:codeDescription": null
+                  },
+                  "cargo:slac": null,
+                  "cargo:uldSerialNumber": "ULD123456",
+                  "cargo:dryIceWeight": null,
+                  "cargo:pieceGroupGrossWeight": {
+                      "@type": "cargo:Value",
+                      "cargo:unit": {
+                          "@type": "ccodes:MeasurementUnitCode",
+                          "cargo:code": "KGM"
+                      },
+                      "cargo:numericalValue": 120
+                  },
+                  "cargo:pieceGroupId": 1,
+                  "cargo:pieceGroupCount": 1
+              }
+          ],
+          "cargo:specialHandlingCodes": [
+              {
+                  "@type": "ccodes:SpecialHandlingCode",
+                  "cargo:code": "COM"
+              }
+          ],
+          "cargo:consolidationIndicator": true,
+          "cargo:specialServiceRequests": [],
+          "cargo:textualHandlingInstructions": [],
+          "cargo:skeletonIndicator": false
+      }
+  }
+}

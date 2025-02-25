@@ -1,0 +1,17 @@
+meta {
+  name: translate function GCP
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://translate-email-to-json-321227410676.us-central1.run.app
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "input": "Below is an email request of the quotation request froma forwarder to a carrier. \n  I need a quote for a conso ULD shipment. It is supposed to leave from Luxembourg and arrive in HongKong on March 2,2025. The IATA number is 20470379111.The goods are consolidation, weighing around 251kg with avolume of 1.728 cubic meters. Also, the ULD is type AMD, contour Q7,weighing 120kg, and the serial number is ULD00001. Transform the above into a OneRecord JSON LD requestobject "
+  }
+}

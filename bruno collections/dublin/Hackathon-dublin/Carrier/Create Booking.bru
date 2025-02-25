@@ -1,0 +1,27 @@
+meta {
+  name: Create Booking
+  type: http
+  seq: 3
+}
+
+post {
+  url: 
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "@context": {
+      "cargo": "https://onerecord.iata.org/ns/cargo#",
+      "api": "https://onerecord.iata.org/ns/api#",
+      "ccodes": "https://onerecord.iata.org/ns/coreCodeLists#"
+    },
+    "@type": "cargo:Booking",
+    "cargo:bookingRequest": {
+      "@id": "{{baseUrlCarrier}}/logistics-objects/{{BookingRequestId}}"
+    },
+    "cargo:waybillNumber": "172",
+    "cargo:waybillPrefix": "00001000"
+  }
+}

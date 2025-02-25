@@ -1,0 +1,195 @@
+meta {
+  name: Create Booking Option
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrlCarrier}}/logistics-objects
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "@context": {
+          "cargo": "https://onerecord.iata.org/ns/cargo#",
+          "api": "https://onerecord.iata.org/ns/api#",
+          "ccodes": "https://onerecord.iata.org/ns/coreCodeLists#"
+      },
+    "@type": "cargo:BookingOptionRequest",  
+    "@id": "{{baseForwarderUrl}}/logistics-objects/{{bookingOptionRequestId}}",
+      "cargo:bookingOptions": [
+          {
+              "@type": "cargo:BookingOption",
+              "cargo:price": {
+                  "@type": "cargo:Price",
+                  "cargo:chargeCode": {
+                      "@type": "ccodes:ChargeCode",
+                      "cargo:code": "CA"
+                  },
+                  "cargo:ratings": [],
+                  "cargo:grandTotal": 9176.84,
+                  "cargo:skeletonIndicator": false
+              },
+              "cargo:bookingTimes": {
+                  "@type": "cargo:BookingTimes",
+                  "cargo:earliestAcceptanceTime": "2025-02-28T00:00:00",
+                  "cargo:latestAcceptanceTime": "2025-03-01T00:00:00",
+                  "cargo:latestArrivalTime": "2025-03-07T00:00:00",
+                  "cargo:timeOfAvailability": "2025-03-01T00:00:00",
+                  "cargo:totalTransitTime": "PT11H30M"
+              },
+              "cargo:carrier": {
+                  "@type": "cargo:Carrier",
+                  "cargo:airlineCode": "CV",
+                  "cargo:prefix": null,
+                  "cargo:iataCargoAgentCode": "CV",
+                  "cargo:iataCargoAgentLocationIdentifier": null,
+                  "cargo:skeletonIndicator": false,
+                  "cargo:name": "Cargolux Airlines",
+                  "cargo:shortName": "CLX",
+                  "cargo:parentOrganization": null,
+                  "cargo:contactPersons": []
+              },
+              "cargo:carrierProduct": {
+                  "@type": "cargo:CarrierProduct",
+                  "cargo:productCode": {
+                      "@type": "cargo:CodeListElement",
+                      "cargo:code": "je",
+                      "cargo:codeDescription": null
+                  },
+                  "cargo:serviceLevelCode": {
+                      "@type": "cargo:CodeListElement",
+                      "cargo:code": "STANDARD",
+                      "cargo:codeDescription": null
+                  },
+                  "cargo:productDescription": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016"
+              },
+              "cargo:statusBookingOption": {
+                  "@type": "ccodes:BookingOptionStatus",
+                  "cargo:code": "BOOKABLE"
+              },
+              "cargo:unitsPreference": {
+                  "@type": "cargo:UnitsPreference",
+                  "cargo:currency": {
+                      "@type": "ccodes:CurrencyCode",
+                      "cargo:code": "EUR"
+                  },
+                  "cargo:dimensionsUnit": {
+                      "@type": "ccodes:DimensionUnitCode",
+                      "cargo:code": "CMT"
+                  },
+                  "cargo:temperatureUnit": {
+                      "@type": "ccodes:TemperatureUnitCode",
+                      "cargo:code": "CEL"
+                  },
+                  "cargo:volumeUnit": {
+                      "@type": "ccodes:VolumeUnitCode",
+                      "cargo:code": "MTQ"
+                  },
+                  "cargo:weightUnit": {
+                      "@type": "ccodes:WeightUnitCode",
+                      "cargo:code": "KGM"
+                  },
+                  "cargo:skeletonIndicator": false
+              },
+              "cargo:transportLegs": [
+                  {
+                      "@type": "cargo:TransportLegs",
+                      "cargo:legNumber": 1,
+                      "cargo:transportIdentifier": "CVSystem.Int32[]",
+                      "cargo:transportMeansType": null,
+                      "cargo:rransportMeansServiceType": {
+                          "@type": "ccodes:TransportMeansServiceType",
+                          "cargo:code": "FREIGHTER"
+                      },
+                      "cargo:departureLocation": {
+                          "@type": null,
+                          "cargo:locationCodes": [
+                              {
+                                  "@type": "cargo:CodeListElement",
+                                  "cargo:code": "LUX",
+                                  "cargo:codeDescription": null
+                              }
+                          ],
+                          "locationName": null,
+                          "cargo:locationType": null,
+                          "cargo:skeletonIndicator": false
+                      },
+                      "cargo:arrivalLocation": {
+                          "@type": null,
+                          "cargo:locationCodes": [
+                              {
+                                  "@type": "cargo:CodeListElement",
+                                  "cargo:code": "PVG",
+                                  "cargo:codeDescription": null
+                              }
+                          ],
+                          "locationName": null,
+                          "cargo:locationType": null,
+                          "cargo:skeletonIndicator": false
+                      },
+                      "cargo:departureDate": "2025-03-06T00:00:00",
+                      "cargo:arrivalDate": "2025-03-07T00:00:00",
+                      "cargo:skeletonIndicator": false
+                  }
+              ],
+              "cargo:additionalInformation": null,
+              "cargo:offerValidFrom": "2025-03-01T00:00:00",
+              "cargo:offerValidTo": "2025-03-06T00:00:00",
+              "cargo:requestMatch": true,
+              "cargo:skeletonIndicator": false
+          }
+      ],
+      "cargo:bookingPreference": {
+          "@type": "cargo:BookingPreferences",
+          "cargo:aircraftPossibilityCode": {
+              "@type": "ccodes:AircraftPossibilityCode",
+              "cargo:code": "BBQ"
+          },
+          "cargo:excludedViaPoints": [],
+          "cargo:includedViaPoints": [],
+          "cargo:maxSegments": 1,
+          "cargo:preferredTransportId": null,
+          "cargo:priceReferenceId": null
+      },
+      "cargo:carrierProduct": null,
+      "cargo:timePreferences": {
+          "@type": "cargo:BookingTimes",
+          "cargo:earliestAcceptanceTime": "2025-02-28T00:00:00",
+          "cargo:latestAcceptanceTime": "2025-03-01T00:00:00",
+          "cargo:latestArrivalTime": "2025-03-17T00:00:00",
+          "cargo:timeOfAvailability": "2025-03-01T00:00:00",
+          "cargo:totalTransitTime": "PT11H30M"
+      },
+      "cargo:unitsPreference": {
+          "@type": "cargo:UnitsPreference",
+          "cargo:currency": {
+              "@type": "ccodes:CurrencyCode",
+              "cargo:code": "EUR"
+          },
+          "cargo:dimensionsUnit": {
+              "@type": "ccodes:DimensionUnitCode",
+              "cargo:code": "CMT"
+          },
+          "cargo:temperatureUnit": {
+              "@type": "ccodes:TemperatureUnitCode",
+              "cargo:code": "CEL"
+          },
+          "cargo:volumeUnit": {
+              "@type": "ccodes:VolumeUnitCode",
+              "cargo:code": "MTQ"
+          },
+          "cargo:weightUnit": {
+              "@type": "ccodes:WeightUnitCode",
+              "cargo:code": "KGM"
+          },
+          "cargo:skeletonIndicator": false
+      },
+      "cargo:transportLegs": [],
+      "cargo:knownShipper": true,
+      "cargo:skeletonIndicator": false
+  
+  }
+}

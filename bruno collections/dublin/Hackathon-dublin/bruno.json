@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Hackathon-dublin",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
