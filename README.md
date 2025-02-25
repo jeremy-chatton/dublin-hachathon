@@ -15,8 +15,9 @@ https://aistudio.google.com/apikey
 
 #create a function using java 17
 
+#copy paste the java file and the pom.xml into the cloud function editor
 
-#
+#change the API key in TranslateMailHttpFunction.java 
 
 
 
